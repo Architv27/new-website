@@ -1,38 +1,282 @@
+/* .App {
+  text-align: center;
+}
+
+.heroBackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+/* .heroBackground {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #ff512f;
+  background: -webkit-linear-gradient(to right, #dd2476, #ff512f);
+  background: linear-gradient(to right, #dd2476, #ff512f);
+  overflow: hidden;
+} */
+
+/* .circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  animation: pulse 5s infinite;
+}
+
+.circle.small {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 10%;
+}
+
+.circle.medium {
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  right: 15%;
+}
+
+.circle.large {
+  width: 400px;
+  height: 400px;
+  bottom: 20%;
+  left: 25%;
+}
+
+/* Base animation for all circles */
+/* @keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(1.1);
+    border-radius: 50%;
+  }
+}
+
+/* Unique pulse animations for each circle size */
+/* @keyframes pulseSmall {
+  0%, 100% {
+    transform: scale(1);
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(1.05);
+    border-radius: 30% -100% -100% 10%;
+  }
+}
+
+@keyframes pulseMedium {
+  0%, 100% {
+    transform: scale(1);
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(1.08);
+    border-radius: 48% 52% 52% 48%;
+  }
+} */
+
+/* @keyframes pulseLarge {
+  0%, 100% {
+    transform: scale(1);
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(1.12);
+    border-radius: 46% 54% 54% 46%;
+  }
+}
+
+.circle.small {
+  animation: pulseSmall 5s infinite;
+}
+
+.circle.medium {
+  animation: pulseMedium 5s infinite;
+}
+
+.circle.large {
+  animation: pulseLarge 5s infinite;
+} */
+
+
+/* @keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+/* h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}  */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.heroBackground {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width: 100%;
+  height: 100vh;
   color: white;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.circle.small {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 10%;
+  animation: pulseSmall 5s infinite;
+}
+
+.circle.medium {
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  right: 15%;
+  animation: pulseMedium 5s infinite;
+}
+
+.circle.large {
+  width: 400px;
+  height: 400px;
+  bottom: 20%;
+  left: 25%;
+  animation: pulseLarge 5s infinite;
+}
+
+@keyframes pulseSmall {
+  0%, 100% {
+    transform: scale(1);
+    border-radius: 50%;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    transform: scale(1.1);
+    border-radius: 30% 70% 70% 30%/60% 40% 40% 60%;
   }
+  50% {
+    transform: scale(0.9);
+    border-radius: 70% 30% 50% 50%/30% 70% 50% 50%;
+  }
+  75% {
+    transform: scale(1.05);
+    border-radius: 40% 60% 60% 40%/50% 50% 70% 30%;
+  }
+}
+
+
+@keyframes pulseMedium {
+  0%, 100% {
+    transform: scale(1);
+    border-radius: 50%;
+  }
+  25% {
+    transform: scale(1.1);
+    border-radius: 50% 50% 40% 40%/ 40% 40% 60% 60%;
+  }
+  50% {
+    transform: scale(1.2);
+    border-radius: 40% 40% 30% 30%/ 30% 30% 70% 70%;
+  }
+  75% {
+    transform: scale(1.15);
+    border-radius: 45% 45% 35% 35%/ 35% 35% 65% 65%;
+  }
+}
+
+
+
+@keyframes pulseLarge {
+  0%, 100% {
+    transform: scale(1);
+    border-radius: 50%;
+  }
+  25% {
+    transform: scale(1.2) translate(15px, -15px);
+    border-radius: 45% 55% 55% 45%/55% 45% 55% 45%;
+  }
+  50% {
+    transform: scale(0.85) translate(-15px, 15px);
+    border-radius: 30% 70% 70% 30%/70% 30% 70% 30%;
+  }
+  75% {
+    transform: scale(1.05) translate(10px, -10px);
+    border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
+  }
+}
+
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+nav {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust as per your layout */
+}
+
+nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+
+.App h1 {
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #FFFFFF;
+  margin-bottom: 32px; /* Adjust as per your layout */
 }
