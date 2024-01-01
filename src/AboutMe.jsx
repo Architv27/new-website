@@ -1,88 +1,180 @@
-import React, { useRef, useEffect } from 'react';
-import * as THREE from 'three';
-import cloudTexture from "./assets/cloud.png"; // Ensure this path is correct
-import earthTexture from "./assets/land.png"; 
+// import React, { useRef, useEffect, useState } from 'react';
+// import * as THREE from 'three';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+// import DNAHelix from './threejs/DNA';
+
+
+// const AboutMe = () => {
+//   const [showBackButton, setShowBackButton] = useState(false);
+
+//   const handleScroll = (event) => {
+//     const bottom = event.target.scrollHeight - event.target.scrollTop === event.target.clientHeight;
+//     setShowBackButton(bottom);
+//   };
+
+//   return (
+//     <div onScroll={handleScroll} style={{ height: '200vh', position: 'relative', overflowY: 'scroll' }}>
+//       <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}>
+//         <DNAHelix/>
+//       </div>
+//       <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
+//         {/* Overlay content */}
+//         <div style={{
+//           position: 'absolute',
+//           top: '50%',
+//           left: '50%',
+//           transform: 'translate(-50%, -50%)',
+//           color: 'white',
+//           textAlign: 'center'
+//         }}>
+//           <h1>About Me</h1>
+//           <p>Archit Verma is an experienced software engineer...</p>
+//         </div>
+//       </div>
+//       <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
+//         {/* More content here */}
+//         {showBackButton && (
+//           <button onClick={() => window.history.back()}>Go Back</button>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// // export default AboutMe;
+// import React, { useRef, useState } from 'react';
+// import DNAHelix from './threejs/DNA';
+// import Zoom from 'react-reveal/Zoom';  // Import Zoom from react-reveal
+
+// const AboutMe = () => {
+//   const [showBackButton, setShowBackButton] = useState(false);
+
+//   const handleScroll = (event) => {
+//     const bottom = event.target.scrollHeight - event.target.scrollTop === event.target.clientHeight;
+//     setShowBackButton(bottom);
+//   };
+
+//   return (
+//     <div onScroll={handleScroll} style={{ height: '100vh', overflowY: 'scroll' }}>
+//       <div style={{ position: 'fixed', top: 0, width: '100%', height: '100%' }}>
+//         <DNAHelix />
+//       </div>
+//       <Zoom> {/* Wrap the content with Zoom for the animation */}
+//         <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
+//           {/* Overlay content */}
+//           <div style={{
+//             position: 'absolute',
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//             color: 'white',
+//             textAlign: 'center'
+//           }}>
+//             <h1>I am Archit Verma</h1>
+//             <p>Archit Verma is an experienced software engineer...</p>
+//           </div>
+//         </div>
+//       </Zoom>
+//       {showBackButton && (
+//         <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
+//           <button onClick={() => window.history.back()}>Go Back</button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default AboutMe;
+// import React, { useRef, useState } from 'react';
+// import DNAHelix from './threejs/DNA';
+// import Zoom from 'react-reveal/Zoom';  // Import Zoom from react-reveal
+
+// const AboutMe = () => {
+//   const [showBackButton, setShowBackButton] = useState(false);
+
+//   const handleScroll = (event) => {
+//     const bottom = event.target.scrollHeight - event.target.scrollTop === event.target.clientHeight;
+//     setShowBackButton(bottom);
+//   };
+
+//   return (
+//     <div onScroll={handleScroll} style={{ height: '200vh', overflowY: 'scroll' }}>
+//       <div style={{ position: 'fixed', top: 0, width: '100%', height: '100%' }}>
+//         <DNAHelix />
+//       </div>
+//       <Zoom> {/* First section */}
+//         <div style={{ height: '50%', position: 'relative', zIndex: 1 }}>
+//           {/* Overlay content for the first section */}
+//           <div style={{ position: 'absolute', top: '25%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center' }}>
+//             <h1>I am Archit Verma</h1>
+//             <p>Brief introduction...</p>
+//           </div>
+//         </div>
+//       </Zoom>
+//       <Zoom> {/* Second section */}
+//         <div style={{ height: '50%', position: 'relative', zIndex: 1 }}>
+//           {/* Overlay content for the second section */}
+//           <div style={{ position: 'absolute', top: '75%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center' }}>
+//             <h2>My Experience</h2>
+//             <p>Detailed experience description...</p>
+//           </div>
+//         </div>
+//       </Zoom>
+//       {showBackButton && (
+//         <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
+//           <button onClick={() => window.history.back()}>Go Back</button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default AboutMe;
+import React, { useRef, useState } from 'react';
 import DNAHelix from './threejs/DNA';
+import Zoom from 'react-reveal/Zoom';
 
+const AboutMe = () => {
+  const [showBackButton, setShowBackButton] = useState(false);
 
+  const handleScroll = (event) => {
+    const bottom = event.target.scrollHeight - event.target.scrollTop === event.target.clientHeight;
+    setShowBackButton(bottom);
+  };
 
-
-function AboutMe() {
   return (
-    <div>
-      <DNAHelix/>
-      {/* Additional content about yourself here */}
+    <div onScroll={handleScroll} style={{ height: '300vh', overflowY: 'scroll' }}>
+      <div style={{ position: 'fixed', top: 0, width: '100%', height: '100%' }}>
+        <DNAHelix />
+      </div>
+      <Zoom> {/* First section */}
+        <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center' }}>
+            <h1>I am Archit Verma</h1>
+            <p>A brief introduction about who I am and my interests...</p>
+          </div>
+        </div>
+      </Zoom>
+      <Zoom> {/* Second section */}
+        <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center' }}>
+            <h2>My Experience</h2>
+            <p>Details about my professional journey, key projects, and roles...</p>
+          </div>
+        </div>
+      </Zoom>
+      <Zoom> {/* Third section */}
+        <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center' }}>
+            <h3>Tools & Skills</h3>
+            <p>Information about the technical tools and skills I possess, including programming languages and software expertise...</p>
+          </div>
+        </div>
+      </Zoom>
+      {/* Back Button Section */}
     </div>
   );
-}
+};
+
 
 export default AboutMe;
-// function Globe() {
-//   const mountRef = useRef(null);
-//   const cloudsMeshRef = useRef();
-//   const sphereRef = useRef(null); // useRef for the sphere
-
-//   useEffect(() => {
-//     const currentRef = mountRef.current;
-//     const { clientWidth: width, clientHeight: height } = currentRef;
-//     const scene = new THREE.Scene();
-//     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-//     const renderer = new THREE.WebGLRenderer();
-//     const loader = new THREE.TextureLoader();
-
-//     renderer.setSize(width, height);
-//     currentRef.appendChild(renderer.domElement);
-
-//     loader.load(earthTexture, (texture) => {
-//       const sphereMaterial = new THREE.MeshPhongMaterial({
-//         map: texture,
-//         color: new THREE.Color(0xFFFFFF), // Pink color
-//         // Optional: Add these properties if the texture map is making the sphere appear black
-//         reflectivity: 0,
-//         shininess: 0
-//       });
-//       const sphereGeometry = new THREE.SphereGeometry(5, 32, 32);
-//       sphereRef.current = new THREE.Mesh(sphereGeometry, sphereMaterial);
-//       scene.add(sphereRef.current);
-//     });
-
-//     let cloudMaterial;
-
-//     loader.load(cloudTexture, (texture) => {
-//       const cloudGeometry = new THREE.SphereGeometry(5.05, 32, 32);
-//       cloudMaterial = new THREE.MeshBasicMaterial({ map: texture, transparent: true, opacity: 0.2 });
-//       cloudsMeshRef.current = new THREE.Mesh(cloudGeometry, cloudMaterial);
-//       scene.add(cloudsMeshRef.current);
-//     });
-
-//     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-//     scene.add(ambientLight);
-//     camera.position.z = 10;
-
-//     const animate = function () {
-//       requestAnimationFrame(animate);
-
-//       if (cloudsMeshRef.current) {
-//         cloudsMeshRef.current.rotation.y += 0.003;
-//         cloudsMeshRef.current.rotation.x += 0.002;
-//         const scale = 1 + 0.1 * Math.abs(Math.sin(performance.now() / 1000));
-//         cloudsMeshRef.current.scale.set(scale, scale, scale);
-//         cloudMaterial.opacity = Math.max(0.6, 0.8 + 0.2 * Math.sin(performance.now() / 1000));
-//       }
-
-//       // if (sphereRef.current) {
-//       //   sphereRef.current.rotation.y -= 0.005;
-//       // }
-
-//       renderer.render(scene, camera);
-//     };
-
-//     animate();
-
-//     return () => {
-//       currentRef.removeChild(renderer.domElement);
-//     };
-//   }, []);
-
-//   return <div ref={mountRef} style={{ width: '100%', height: '100vh' }} />;
-// }
