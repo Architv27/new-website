@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import AboutMe from './AboutMe';
-
+import ProjectsPage from './Project';
 const Projects = () => <div>Projects Content</div>;
 const Contact = () => <div>Contact Content</div>;
 
@@ -49,7 +49,7 @@ function App() {
         </div>
                 } />
           <Route path="/about-me" element={<AboutMe />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
