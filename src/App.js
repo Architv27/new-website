@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import AboutMe from './AboutMe';
 import ProjectsPage from './Project';
-const Projects = () => <div>Projects Content</div>;
+import WeatherComponent from './Weather';
+
+
 const Contact = () => <div>Contact Content</div>;
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
         <Route path="/" element={
         <div className="heroBackground">
           <div className="titleContainer">
+            <WeatherComponent/>
             <div className="line"></div>
             <h1>Archit Verma</h1>
             <div className="line"></div>

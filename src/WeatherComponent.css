@@ -1,0 +1,85 @@
+.weather-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Helvetica, sans-serif';
+  }
+  
+  .weather-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+  }
+  
+  .weather-icon {
+    margin-bottom: 20px;
+  }
+  
+  .weather-icon img {
+    width: 60px; /* Adjust size as per your icons */
+  }
+  
+  .weather-info h2 {
+    margin: 5px 0;
+    font-size: 1.5em;
+  }
+  
+  .weather-info p {
+    margin: 5px 0;
+    font-size: 1em;
+  }
+  
+  /* Example of changing the card background and text color based on the weather */
+  .weather-card.sunny {
+    background-image: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+  }
+  
+  .weather-card.cloudy {
+    background-image: linear-gradient(to bottom right, #6dd5ed, #2193b0);
+  }
+  
+  .weather-card.rainy {
+    background-image: linear-gradient(to bottom right, #373b44, #4286f4);
+  }
+  
+  .weather-card.snow {
+    background-image: linear-gradient(to bottom right, #83a4d4, #b6fbff);
+  }
+  
+  .weather-card.thunderstorm {
+    background-image: linear-gradient(to bottom right, #536976, #292e49);
+  }
+  
+  .weather-card.drizzle {
+    background-image: linear-gradient(to bottom right, #89f7fe, #66a6ff);
+  }
+  
+  .weather-card.haze {
+    background-image: linear-gradient(to bottom right, #3e5151, #decba4);
+  }
+  
+  /* Add additional styles for other weather conditions as needed */
+  
+  /* This can be used for additional details like wind, humidity etc., if you decide to add them */
+  .weather-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+  }
+  
+  .weather-details div {
+    margin: 10px 0;
+  }
+  
+  /* Loading and error messages */
+  .message {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  
