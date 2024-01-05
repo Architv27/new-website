@@ -5,6 +5,7 @@ import './App.css';
 import AboutMe from './AboutMe';
 import ProjectsPage from './Project';
 import WeatherComponent from './Weather';
+import DescriptionPage from './DescriptionPage';
 
 
 const Contact = () => <div>Contact Content</div>;
@@ -25,9 +26,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-       <div className="App" style={{ cursor: 'none' }}>
+       {/* <div className="App" style={{ cursor: 'none' }}> */}
 
-       <div className="cursor-dot" style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px` }} />
+       {/* <div className="cursor-dot" style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px` }} /> */}
         <Router>
         <Routes>
         <Route path="/" element={
@@ -54,10 +55,11 @@ function App() {
           <Route path="/about-me" element={<AboutMe />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/:projectId" element={<DescriptionPage />} />
         </Routes>
       </Router>
       </div>
-      </div>
+      // </div>
   );
 }
 

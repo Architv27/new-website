@@ -14,6 +14,7 @@
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   position: relative;
+  z-index: 0;
 }
 
 .line {
@@ -161,13 +162,13 @@ nav a:hover {
   margin-bottom: 32px; /* Adjust as per your layout */
 }
 
-/* Custom cursor style */
+/* Custom cursor style
 .custom-cursor {
   cursor: none;
   
-}
+} */
 
-/* Custom cursor dot */
+/* Custom cursor dot
 .cursor-dot {
   width: 8px;
   height: 8px;
@@ -177,7 +178,7 @@ nav a:hover {
   pointer-events: visiblePainted;
   z-index: 1000;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1.0);
-}
+} */
 
 /* .cursor-dot::before {
   content: '';
@@ -192,6 +193,6 @@ nav a:hover {
   /* pointer-events: none; */
 /* } */
 
-button, a.navItem, .any-other-interactive-class {
+/* button, a.navItem, .any-other-interactive-class {
   cursor: none;
-}
+} */

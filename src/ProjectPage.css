@@ -8,6 +8,8 @@
   height: 100vh; /* Full viewport height */
   overflow: hidden;
   cursor: none black;
+  display: flex;
+  align-items: center;
   z-index: 1; /* Set to 1 or remove if not needed */
 }
 
@@ -24,10 +26,15 @@
   background-repeat: no-repeat; /* No repetition of the image */
   transition: opacity 1s ease-in-out;
   opacity: 0; /* Start with slides hidden */
+  pointer-events:fill; 
 }
 
 .slide.active {
   opacity: 1; /* Show the active slide */
+}
+
+.slide.inactive {
+  z-index: 30; /* Show the active slide */
 }
 
 .slide-title {
@@ -51,11 +58,18 @@
   transform: translateX(-50%);
   z-index: 3;
 }
+.blur-background {
+  filter: blur(5px);
+}
+/* ProjectPage.css */
+.dialog-rounded {
+  border-radius: 15px; /* Adjust the radius as needed */
+}
 
 .dot {
   display: inline-block;
   margin: 0 5px;
-  cursor: pointer;
+  /* cursor: pointer; */
   background-color: rgb(0, 0, 0); /* Adjust color to match design */
   width: 6px; /* Size of dots */
   height: 6px; /* Size of dots */
@@ -74,35 +88,41 @@
 }
 
 
-/* Style for arrows */
 .arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 24px;
+  top: 50%; /* Vertically center */
+  transform: translateY(-50%); /* Center alignment adjustments */
+  /* cursor: pointer; */
+  font-size: 30px;
   color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  display: flex;
+  background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
+  border-radius: 50%; /* Circular shape */
+  width: 50px; /* Size of the button */
+  height: 50px; /* Size of the button */
+  display: flex; /* For centering the inner content */
+  align-items: center; /* Center align vertically */
+  /* justify-content: center; */
   border: none;
-  padding: 10px;
-  z-index: 150;
+  z-index: 5; /* Ensure arrows are above the slides */
 }
 
 .left-arrow {
-  left: 10px;
-  cursor: none;
+  left: 30px; /* Adjust as needed for left alignment */
+  align-items: flex-start;
 }
 
 .right-arrow {
-  right: 10px;
-  cursor: none;
+  right: 30px;
+  align-items:flex-end ;/* Adjust as needed for right alignment */
 }
 .back-icon {
   position: absolute;
   top: 20px; /* Adjust as needed */
   left: 30px; /* Adjust as needed */
-  cursor: pointer;
-  z-index: 4;
+  /* cursor: pointer; */
+  z-index: 150;
   width: 30px; /* Adjust size as needed */
   height: 30px; /* Adjust size as needed */
+  /* cursor: pointer; Ensure back icon is clickable */
 }

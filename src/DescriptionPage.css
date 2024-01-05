@@ -1,0 +1,19 @@
+.project-cover {
+    width: 100%;
+    height: 400px; /* or the height you want for your cover area */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* or any color that contrasts well with your cover image */
+  }
+  
+  .project-content {
+    padding: 20px;
+    /* additional styling for the content */
+  }
+  
