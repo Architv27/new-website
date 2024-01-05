@@ -9,7 +9,7 @@ import rainIcon from './assets/rain-icon.png';
 import snowIcon from './assets/snow-icon.png';
 import thunderstormIcon from './assets/thunderstorm-icon.png';
 // import drizzleIcon from './assets/drizzle-icon.png';
-// import hazeIcon from './assets/haze-icon.png';
+import hazeIcon from './assets/haze-icon.png';
 // import defaultIcon from './assets/default-icon.png'; // Add this image for a default case
 
 const WeatherComponent = () => {
@@ -25,7 +25,7 @@ const WeatherComponent = () => {
         'Snow': snowIcon,
         'Thunderstorm': thunderstormIcon,
         // 'Drizzle': drizzleIcon,
-        // 'Haze': hazeIcon,
+        'Haze': hazeIcon,
         // Add more mappings as needed
     };
 
@@ -68,21 +68,18 @@ const WeatherComponent = () => {
         // Fetch the icon based on the current weather
         const currentWeather = weatherData.weather[0].main;
         const weatherIcon = weatherIconMap[currentWeather] || null;
+          // Get the current time
+        const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
         return (
-            <div className="weather-card">
-                <div className="weather-icon">
-                    {/* Correct the way of setting src in img tag */}
-                    <img src={weatherIcon} alt={currentWeather} />
-                </div>
-                <div className="weather-info">
-                    <h2>{weatherData.name}</h2>
-                    <p>Temperature: {weatherData.main.temp}°C</p>
-                    <p>Description: {weatherData.weather[0].description}</p>
-                    <p>Feels like: {weatherData.main.feels_like}°C</p>
-                    <p>Humidity: {weatherData.main.humidity}%</p>
-                    <p>Pressure: {weatherData.main.pressure} hPa</p>
-                    <p>Wind Speed: {weatherData.wind.speed} m/s</p>
+            <div className="weather-card" style={{width:"40%"}}>
+            <img src={weatherIcon} alt={currentWeather} className="weather-icon" />
+            <div className="weather-info">
+                    <h2>{weatherData.main.temp }°C</h2>
+                    <p>{weatherData.name}</p>
+                    <p>Current {currentTime} </p>
+                    {/* <p>Description: {weatherData.weather[0].description}</p> */}
+                    {/* <p>Feels like: {weatherData.main.feels_like}°C</p> */}
                 </div>
             </div>
         );
@@ -91,8 +88,17 @@ const WeatherComponent = () => {
     return (
         <div className="weather-component">
             {isLoading ? (
-                <p>Loading weather data...</p>
-            ) : errorMessage ? (
+            <div className="weather-card" style={{width:"50%"}}>
+            {/* <img src={weatherIcon} alt={currentWeather} className="weather-icon" /> */}
+            <div className="weather-info">
+                    <h2>Fetching Temperature..</h2>
+                    <p>Fetching Location ..</p>
+                    <p>Fetching Time </p>
+                    {/* <p>Description: {weatherData.weather[0].description}</p> */}
+                    {/* <p>Feels like: {weatherData.main.feels_like}°C</p> */}
+                </div>
+            </div>
+        ) : errorMessage ? (
                 <p>Error: {errorMessage}</p>
             ) : data ? (
                 renderWeatherCard(data)

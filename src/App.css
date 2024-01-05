@@ -196,3 +196,12 @@ nav a:hover {
 /* button, a.navItem, .any-other-interactive-class {
   cursor: none;
 } */
+.weatherContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px; /* Adjust as needed */
+}

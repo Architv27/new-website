@@ -34,7 +34,9 @@ function App() {
         <Route path="/" element={
         <div className="heroBackground">
           <div className="titleContainer">
-            <WeatherComponent/>
+            <div className="weatherContainer">
+                  <WeatherComponent/>
+            </div>
             <div className="line"></div>
             <h1>Archit Verma</h1>
             <div className="line"></div>

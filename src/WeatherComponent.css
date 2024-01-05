@@ -1,13 +1,19 @@
 .weather-component {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Helvetica, sans-serif';
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-family: 'sans-serif';
+    width: 80%;
   }
   
   .weather-card {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: end; /* Align items horizontally */
+    padding: 10px;
     margin: 20px;
-    padding: 20px;
+    width: 80%;
+    /* padding: 20px; */
     border-radius: 15px;
     width: 200px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -15,14 +21,20 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+    background-color: #292e49;
+  }
+
+  .weather-icon {
+    margin-right: 10px; /* Adjust space between icon and info */
+    width: 50px; /* Adjust icon size as needed */
   }
   
-  .weather-icon {
+  /* .weather-icon {
     margin-bottom: 20px;
   }
-  
+   */
   .weather-icon img {
-    width: 60px; /* Adjust size as per your icons */
+    width: 50px; /* Adjust size as per your icons */
   }
   
   .weather-info h2 {
@@ -31,7 +43,7 @@
   }
   
   .weather-info p {
-    margin: 5px 0;
+    margin: 3px 0;
     font-size: 1em;
   }
   
