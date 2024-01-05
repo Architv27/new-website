@@ -43,6 +43,7 @@ const ProjectDialog = ({ open, onClose, slideIndex, slides, slideTitles, slideDe
                     alt={slideTitles[slideIndex]} 
                     style={imageStyle}
                     />
+                <h3>Project Description</h3>
                 <p>{slideDescriptions[slideIndex]}</p>
                 {/* Software Tools and Languages Section */}
                 <div>

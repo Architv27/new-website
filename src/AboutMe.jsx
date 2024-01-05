@@ -18,8 +18,8 @@ const AboutMe = () => {
       <Zoom> {/* First section */}
         <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
           <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center' }}>
-            <h1>I am Archit Verma</h1>
-            <p>A brief introduction about who I am and my interests...</p>
+            <h1>About me</h1>
+            <p>I am Archit Verma, a proficient software engineer with a deep interest in full-stack development. My technical skills span a range of programming languages and web technologies, including C/C++, Java, Python, and ReactJS. I have a strong foundation in software architecture and API development. Alongside my professional pursuits in technology, I am passionate about traveling and gaming. These personal interests provide me with a balanced and diverse perspective, enriching my professional expertise and creativity in the dynamic field of software engineering.</p>
           </div>
         </div>
       </Zoom>

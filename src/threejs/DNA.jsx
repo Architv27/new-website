@@ -162,8 +162,8 @@ const DNAHelix = () => {
     dnaGroup.position.x = 30; // Adjust this value to move the DNA group to the right
     scene.add(dnaGroup);
 
-    dnaGroup.rotation.z = -0.5; // Tilt the DNA structure
-    dnaGroup.rotation.x = 0.5;  // Additional rotation for better visibility
+    dnaGroup.rotation.z = -0.3; // Tilt the DNA structure
+    dnaGroup.rotation.x = 0.2;  // Additional rotation for better visibility
 
     const animate = () => {
       requestAnimationFrame(animate);
