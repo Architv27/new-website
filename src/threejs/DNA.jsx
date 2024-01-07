@@ -83,7 +83,7 @@ const DNAHelix = () => {
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: '100vw', height: '100vh' }} />;
+  return <div ref={mountRef} style={{ width: '100vw', height: '100vh',  backgroundColor: "#121212" }} />;
 };
 
 function createHelixStrand(points, radius, color, phaseOffset, xOffset) {

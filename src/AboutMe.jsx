@@ -12,7 +12,7 @@ const AboutMe = () => {
   };
 
   return (
-    <div onScroll={handleScroll} style={{ height: '300vh', overflowY: 'scroll' }}>
+    <div onScroll={handleScroll} style={{ height: '300vh', overflowY: 'scroll' ,backgroundColor: '#121212' }}>
       <div style={{ position: 'fixed', top: 0, width: '100%', height: '100%' }}>
         <DNAHelix />
       </div>
@@ -25,20 +25,19 @@ const AboutMe = () => {
         </div>
       </Zoom>
       <Zoom> {/* Second section */}
-  <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
-    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center', width:"80%"}}>
-      <h2>My Experience</h2>
-      <h3>Full Stack Software Engineer (Rapidia Tech Inc, Jan 2022 - Apr 2023)</h3>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', maxWidth:"100%" }}>
-        <div style={{ maxWidth: '80%' }}> {/* Adjusted width from 60% to 80% */}
-          <p>As a Full-Stack Developer on the Rapidia Software project, I played a key role in creating an advanced solution for metal 3D printing, focusing on efficiency and quality for both professional and amateur users. My work involved implementing complex features like G-Code management, real-time monitoring, and print job queue handling, leveraging JavaScript, TypeScript, and React for the frontend, and Node.js for backend stability. I innovated by integrating Raspberry Pi 4 and Arduino for seamless hardware control, utilizing Docker in a microservice architecture for scalability. This project exemplified the fusion of software prowess and hardware integration, significantly enhancing the 3D printing process.
-</p>
+        <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center', width:"80%"}}>
+            <h2>My Experience</h2>
+            <h3>Full Stack Software Engineer (Rapidia Tech Inc, Jan 2022 - Apr 2023)</h3>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', maxWidth:"100%" }}>
+              <div style={{ maxWidth: '80%' }}> {/* Adjusted width from 60% to 80% */}
+                <p>As a Full-Stack Developer on the Rapidia Software project, I played a key role in creating an advanced solution for metal 3D printing, focusing on efficiency and quality for both professional and amateur users. My work involved implementing complex features like G-Code management, real-time monitoring, and print job queue handling, leveraging JavaScript, TypeScript, and React for the frontend, and Node.js for backend stability. I innovated by integrating Raspberry Pi 4 and Arduino for seamless hardware control, utilizing Docker in a microservice architecture for scalability. This project exemplified the fusion of software prowess and hardware integration, significantly enhancing the 3D printing process.</p>
+              </div>
+              <img src={me} style={{ maxWidth: '50%', height: 'auto', paddingLeft: 60 }} alt="Archit Verma"></img>
+            </div>
+          </div>
         </div>
-        <img src={me} style={{ maxWidth: '50%', height: 'auto', paddingLeft: 60 }} alt="Archit Verma"></img>
-      </div>
-    </div>
-  </div>
-</Zoom>
+      </Zoom>
 
       <Zoom> {/* Third section */}
         <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>

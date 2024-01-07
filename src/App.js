@@ -9,9 +9,10 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { IconButton } from '@mui/material';
+import FunFactGenerator from './Random';
 
 // Component for contact, assuming it exists
-const Contact = () => <div>Contact Content</div>;
+const Contact = () => <div>Random Content</div>;
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <nav className="navbar">
             <Link to="/about-me" className="navItem">About Me</Link>
             <Link to="/projects" className="navItem">Projects</Link>
-            <Link to="/contact" className="navItem">Contact</Link>
+            <Link to="/random" className="navItem">Random</Link>
           </nav>
         </header>
               <div className="introContainer">
@@ -42,7 +43,9 @@ function App() {
                 <p className="expertise">Expert on</p>
                 <h3 className="location">Based in Canada</h3>
                 <p className="description">I'm a Full-stack Software Engineer. Hey are looking for a designer to build your brand and grow your business? Let's shake hands with me.</p>
-                <button className="downloadCv">Download CV</button>
+                <a href={`${process.env.PUBLIC_URL}/ArchitVermaResume.pdf`} download="ArchitVermaResume.pdf">
+                  <button className="downloadCv">Download Resume</button>
+                </a>
               </div>
               <div className="socialLinks">
                 <IconButton href="https://www.linkedin.com/in/archit-verma-b924a8209/" target="_blank" rel="noopener noreferrer">
@@ -60,7 +63,7 @@ function App() {
           } />
           <Route path="/about-me" element={<AboutMe />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/random" element={<FunFactGenerator />} />
           <Route path="/projects/:projectId" element={<DescriptionPage />} />
         </Routes>
       </Router>
