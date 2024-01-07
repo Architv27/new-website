@@ -1,207 +1,251 @@
 .App {
   text-align: center;
+  background-color: #121212; /* Very dark grey, almost black */
+  color: white;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: flex-start; /* Aligns content to the top */
+  overflow: hidden;
+}
+
+.headerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Spreads content to both ends */
+  align-items: center;
+  padding-top: 20px;
+  position: absolute; /* Keeps the header at the top */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  flex-wrap: wrap; /* Allow the items to wrap if space is needed */
+}
+
+/* New styles for the hi message */
+.titleContainer h2 {
+  font-size: 2.5rem; /* Adjust the size as needed */
+  font-weight: 400; /* Adjust the weight as needed */
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF; /* Adjust the color to match your design */
+}
+
+.profileImage {
+  border-radius: 5%; /* Adjust if you want a different border radius */
+  width: 40vw; /* Responsive width based on viewport width */
+  height: 52vw; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area without stretching */
+  order: 2; /* Ensures the image is on the right */
+  position: relative; /* Use relative instead of absolute */
+  top: unset; /* Reset the top position */
+  left: unset; /* Reset the left position */
+  transform: unset; /* Reset the transform */
+  z-index: 0; /* Image will be under the text */
+}
+
+
+.introContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns items to the left */
+  flex-direction: row; /* Align items horizontally */
+  gap: 20px; /* Adjust the gap between the text and the image */
+  width: 100%; /* Set the width to 100% of the parent */
+  padding-top: 0; /* Reset padding top if it's not needed */
+  padding-left: 8%;
+}
+
+.introText {
+  text-align: left; /* Aligns the text to the left */
+  max-width: 600px; /* Adjust the max-width as needed */
+  order: 1; /* Ensures the text is on the left */
+  z-index: 1; /* Ensure the text is above the image */
+}
+
+.introText h2 {
+  font-size: 4rem; /* Adjust the size as needed */
+  margin-bottom: 0.5em;
+}
+
+.introText .subtitle {
+  font-size: 2rem; /* Adjust the size as needed */
+  margin-bottom: 0; /* Remove bottom margin if not needed */
+}
+
+
+.introText .highlight {
+  color: #E57373; /* Adjust the color to match your design */
+}
+
+/* Ensure that the subtitle is directly below the hi message */
+.subtitle {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  font-weight: 300; /* Adjust the weight as needed */
+  color: #FFFFFF; /* Adjust the color to match your design */
+  margin-top: 0.5em;
+}
+
+.nameAndEmail {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  /* Rest of the styles remain unchanged */
+}
+
+.nameAndEmail h1 {
+  margin: 0; /* Removes margin from the name */
+  font-size: 1.5rem; /* Adjusts font size of the name */
+  padding-right: 20px;
+}
+
+.nameAndEmail .email {
+  margin: 0; /* Removes margin from the email */
+  font-size: 1rem; /* Adjusts font size of the email */
+  color: #aaa; /* Optional: Changes the email color to differentiate from the name */
+  padding-right: 20px;
+}
+
+.nameHighlight {
+  color: #E57373; /* Adjust the color to match your design */
 }
 
 .heroBackground {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  color: white;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  position: relative;
-  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  padding-top: 60px; /* Adjust this value to push content down if needed */
+  position: relative; /* Positioning context for the absolute elements */
+  overflow: hidden;
+}
+.titleContainer {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.line {
-  height: 1px;
-  background-color: #FFFFFF;
+h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  font-size: 3rem; /* Increase font size for heading */
 }
-.circle {
+
+.navContainer {
+  display: flex;
+  justify-content: flex-end; /* Aligns navigation to the right */
+  padding-left: 20;
+  margin-right: 50px;
+}
+
+.navbar {
+  display: flex;
+  gap: 10px;
+  margin-right: 30px;
+}
+.additionalText {
   position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
+  top: 50%;
+  right: 5%; /* Adjust as needed */
+  transform: translateY(-50%);
+  color: white;
+  text-align: left;
+  max-width: 300px; /* Adjust as needed */
+  z-index: 1;
+}
+
+.expertise, .location, .description {
+  margin: 0.5em 0;
+}
+
+.downloadCv {
+  background-color: #e57393; /* Adjust as needed */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.downloadCv:hover {
+  background-color: #ffa4a2; /* Lighter shade for hover effect */
 }
 
 
-nav {
-  text-align: center;
-  margin-bottom: 20px; /* Adjust as per your layout */
-  position:relative;
-  z-index: 10;
-  padding-top: 30px;
-}
-
-nav a {
+.navItem {
   text-decoration: none;
   color: #FFFFFF;
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
+  font-size: 1rem; /* Adjust font size as needed */
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 10px 20px;
   margin: 0 10px;
   border: 1px solid #FFFFFF;
   border-radius: 2px;
-  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+  display: inline-block; /* Added to ensure proper spacing and alignment */
 }
 
-nav a:hover {
+.location {
+  font-size: 2.0rem;
+}
+
+.expertise {
+  color:#e57373
+}
+
+.navItem:hover {
   color: #000000;
   background-color: #FFFFFF;
-  transform: translateY(-2px);
 }
-.circle.small {
-  width: 200px;
-  height: 200px;
-  top: 20%;
-  left: 10%;
-  animation: pulseSmall 5s infinite;
-}
-
-.circle.medium {
-  width: 300px;
-  height: 300px;
-  top: 30%;
-  right: 15%;
-  animation: pulseMedium 6s infinite;
-}
-
-.circle.large {
-  width: 400px;
-  height: 400px;
-  bottom: 20%;
-  left: 25%;
-  animation: pulseLarge 9s infinite;
-}
-
-@keyframes pulseSmall {
-  0%, 100% {
-    transform: scale(1);
-    border-radius: 50%;
+/* Style adjustments for responsive behavior */
+@media (max-width: 768px) {
+  .introContainer {
+    flex-direction: column;
+    gap: 20px;
   }
-  25% {
-    transform: scale(1.1);
-    border-radius: 30% 70% 70% 30%/60% 40% 40% 60%;
+
+  .profileImage {
+    margin-top: 0; /* Reset the margin-top for mobile */
+    width: 150px;
+    height: 150px;
+    order: 1; /* Image goes on top */
   }
-  50% {
-    transform: scale(0.9);
-    border-radius: 70% 30% 50% 50%/30% 70% 50% 50%;
+
+  .introText h2 {
+    font-size: 3rem;
   }
-  75% {
-    transform: scale(1.05);
-    border-radius: 40% 60% 60% 40%/50% 50% 70% 30%;
+
+  .introText .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .introText {
+    /* Adjustments for mobile view */
+    text-align: center;
+    order: 2; /* Text goes below */
   }
 }
 
-
-@keyframes pulseMedium {
-  0%, 100% {
-    transform: scale(1);
-    border-radius: 50%;
-  }
-  25% {
-    transform: scale(1.1);
-    border-radius: 50% 50% 40% 40%/ 40% 40% 60% 60%;
-  }
-  50% {
-    transform: scale(1.2);
-    border-radius: 40% 40% 30% 30%/ 30% 30% 70% 70%;
-  }
-  75% {
-    transform: scale(1.15);
-    border-radius: 45% 45% 35% 35%/ 35% 35% 65% 65%;
-  }
-}
-
-
-
-@keyframes pulseLarge {
-  0%, 100% {
-    transform: scale(1);
-    border-radius: 50%;
-  }
-  25% {
-    transform: scale(1.2) translate(15px, -15px);
-    border-radius: 45% 55% 55% 45%/55% 45% 55% 45%;
-  }
-  50% {
-    transform: scale(0.85) translate(-15px, 15px);
-    border-radius: 30% 70% 70% 30%/70% 30% 70% 30%;
-  }
-  75% {
-    transform: scale(1.05) translate(10px, -10px);
-    border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
-  }
-}
-
-
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-.App h1 {
-  font-family: 'Arial', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #FFFFFF;
-  margin-bottom: 32px; /* Adjust as per your layout */
-}
-
-/* Custom cursor style
-.custom-cursor {
-  cursor: none;
-  
-} */
-
-/* Custom cursor dot
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: white;
-  position: fixed;
-  pointer-events: visiblePainted;
-  z-index: 1000;
-  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1.0);
-} */
-
-/* .cursor-dot::before {
-  content: '';
-  position: absolute;
-  top: -6.7px; /* Adjust to center the boundary */
-  /* left: -7.2px; Adjust to center the boundary */
-  /* width: 20px; Diameter of the outer circle */
-  /* height: 20px; Diameter of the outer circle */
-  /* background: transparent; */
-  /* border: 1px solid rgba(28, 24, 24, 0.5); Semi-transparent border */
-  /* border-radius: 50%; */
-  /* pointer-events: none; */
-/* } */
-
-/* button, a.navItem, .any-other-interactive-class {
-  cursor: none;
-} */
-.weatherContainer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40%;
+.socialLinks {
   display: flex;
-  justify-content: flex-end;
-  margin: 10px; /* Adjust as needed */
+  position: absolute;
+  bottom: 20px; /* Position where you like */
+  left: 20px; /* Position where you like */
+  z-index: 10;
 }
+
+.IconButton {
+  color: #fff; /* Or any other color */
+}
+
+/* Adjust the size of the icons if needed */
+.socialLinks .MuiSvgIcon-root {
+  font-size: 2rem; /* Adjust icon size here */
+}
+
