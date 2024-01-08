@@ -1,56 +1,59 @@
-import React, { useRef, useState } from 'react';
-import DNAHelix from './threejs/DNA';
-import Zoom from 'react-reveal/Zoom';
-import me from './assets/me.jpg';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './AboutMe.css';
+import profileImage from './assets/jaipur2.jpg';
+import { Zoom } from 'react-reveal';
 
 const AboutMe = () => {
-  const [showBackButton, setShowBackButton] = useState(false);
+  const navigate = useNavigate();
 
-  const handleScroll = (event) => {
-    const bottom = event.target.scrollHeight - event.target.scrollTop === event.target.clientHeight;
-    setShowBackButton(bottom);
+  const handleBackClick = () => {
+    navigate('/'); // Navigate to the home route
   };
 
   return (
-    <div onScroll={handleScroll} style={{ height: '300vh', overflowY: 'scroll' ,backgroundColor: '#121212' }}>
-      <div style={{ position: 'fixed', top: 0, width: '100%', height: '100%' }}>
-        <DNAHelix />
+    <div className="container">
+      <div className="fixed-button">
+        <IconButton onClick={handleBackClick} className="back-button" style={{ color: 'white' }}>
+          <ArrowBackIcon />
+          <span className='backtext' style={{ paddingLeft: "20px" }}>Back to Home</span>
+        </IconButton>
       </div>
-      <Zoom> {/* First section */}
-        <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center', width:"80%" }}>
-            <h1>About me</h1>
-            <p>I am Archit Verma, a proficient software engineer with a deep interest in full-stack development. My technical skills span a range of programming languages and web technologies, including C/C++, Java, Python, and ReactJS. I have a strong foundation in software architecture and API development. Alongside my professional pursuits in technology, I am passionate about traveling and gaming. These personal interests provide me with a balanced and diverse perspective, enriching my professional expertise and creativity in the dynamic field of software engineering.</p>
-          </div>
+      <Zoom>
+      <h1 className="about-title">
+          About <span style={{ color: '#E57373' }}>Me.</span>
+      </h1>
+      <div className="profile-section">
+        <img src={profileImage} alt="Profile" className="profile-photo" />
+        <div className="bio-section">
+          <p className="bio">
+            Hello! I'm <span style={{ color: '#E57373' }}>Archit Verma</span>, a 23-year-old international student from India, currently in my <span style={{color:'#E57373'}}>fourth year at Simon Fraser University </span>. My journey in tech has been quite exciting. I've completed three fulfilling work terms as a <span style={{color: '#E57373'}}>Full-stack Engineer at Rapidia Tech Inc</span>, a pioneering metal 3D printer manufacturer based in <span style={{color: '#E57373'}}>Vancouver, BC</span>. This role not only honed my software engineering skills but also deepened my passion for cutting-edge technology.
+            <br /><br />
+            My academic endeavors have been equally rich, delving into diverse areas like Android development, computer vision, deep learning, computer graphics, computer architecture, and operating systems. These experiences have shaped me into a well-rounded tech enthusiast, eager to explore and innovate.
+            <br /><br />
+            My technical expertise includes:
+            <ul>
+            <li><strong style={{ color: '#E57373' }}>Frontend Development:</strong> Proficient in ReactJS, JavaScript, TypeScript, CSS, and HTML.</li>
+            <li><strong style={{ color: '#E57373' }}>Backend Development:</strong> Skilled in Python and Django, with additional expertise in Node.js.</li>
+            <li><strong style={{ color: '#E57373' }}>Systems Programming:</strong> Well-versed in C/C++ and Java.</li>
+            <li><strong style={{ color: '#E57373' }}>Mobile App Development:</strong> Experienced in Kotlin for Android platform.</li>
+            <li><strong style={{ color: '#E57373' }}>Web Technologies:</strong> Knowledgeable in XML.</li>
+            <li><strong style={{ color: '#E57373' }}>DevOps Tools:</strong> Familiar with Docker and Nginx.</li>
+            <li><strong style={{ color: '#E57373' }}>Hardware and Firmware:</strong> Hands-on experience with Arduino, Raspberry Pi, and Marlin firmware.</li>
+            <li><strong style={{ color: '#E57373' }}>Machine Learning and Computer Vision:</strong> Experienced in using TensorFlow, MediaPipe, and OpenCV for advanced computational tasks and AI-driven applications.</li>
+          </ul>
+            <br />
+            But there's more to me than just my academic and professional life. I'm a xenophile at heart, always curious about different cultures and perspectives. In my downtime, you'll often find me immersed in the world of strategic and competitive gaming. I believe these games sharpen my decision-making and strategic planning skills, crucial traits for both my personal and professional growth.
+            <br /><br />
+            Join me on this journey of continuous learning, technological exploration, and fun-filled gaming adventures!
+          </p>
         </div>
+      </div>
       </Zoom>
-      <Zoom> {/* Second section */}
-        <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center', width:"80%"}}>
-            <h2>My Experience</h2>
-            <h3>Full Stack Software Engineer (Rapidia Tech Inc, Jan 2022 - Apr 2023)</h3>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', maxWidth:"100%" }}>
-              <div style={{ maxWidth: '80%' }}> {/* Adjusted width from 60% to 80% */}
-                <p>As a Full-Stack Developer on the Rapidia Software project, I played a key role in creating an advanced solution for metal 3D printing, focusing on efficiency and quality for both professional and amateur users. My work involved implementing complex features like G-Code management, real-time monitoring, and print job queue handling, leveraging JavaScript, TypeScript, and React for the frontend, and Node.js for backend stability. I innovated by integrating Raspberry Pi 4 and Arduino for seamless hardware control, utilizing Docker in a microservice architecture for scalability. This project exemplified the fusion of software prowess and hardware integration, significantly enhancing the 3D printing process.</p>
-              </div>
-              <img src={me} style={{ maxWidth: '50%', height: 'auto', paddingLeft: 60 }} alt="Archit Verma"></img>
-            </div>
-          </div>
-        </div>
-      </Zoom>
-
-      <Zoom> {/* Third section */}
-        <div style={{ height: '100vh', position: 'relative', zIndex: 1 }}>
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center' }}>
-            <h3>Tools & Skills</h3>
-            <p>Information about the technical tools and skills I possess, including programming languages and software expertise...</p>
-          </div>
-        </div>
-      </Zoom>
-      {/* Back Button Section */}
     </div>
   );
 };
-
 
 export default AboutMe;

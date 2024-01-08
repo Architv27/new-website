@@ -145,7 +145,10 @@ const ProjectsPage = () => {
   return (
     <div className={`slideshow-container ${dialogOpen ? 'blur-background' : ''}`}>
       <ToastContainer />
-      <ArrowBackIcon className="back-icon" onClick={() => goBack()} />
+      <div className="back-container" onClick={goBack}>
+        <ArrowBackIcon className="back-icon" />
+        <span className='backtext'>Back to Home</span>
+      </div>
       <div style={{width:"100%",display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:"flex-end"}}>
       <IconButton style={{width:"40px", height:"40px", zIndex:150, color:"whitesmoke"}} className="arrow left-arrow" onClick={goToPreviousSlide}>
         <span>&lt;</span>

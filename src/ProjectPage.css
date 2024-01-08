@@ -124,13 +124,11 @@
 }
 .back-icon {
   position: absolute;
-  top: 20px; /* Adjust as needed */
-  left: 30px; /* Adjust as needed */
   /* cursor: pointer; */
   z-index: 150;
   width: 30px; /* Adjust size as needed */
   height: 30px; /* Adjust size as needed */
-  /* cursor: pointer; Ensure back icon is clickable */
+  cursor: pointer;
 }
 
 .highlight {
@@ -146,4 +144,32 @@
   bottom: 20px;
   right: 4px; /* Adjust as needed to leave space for dots container */
   z-index: 150;
+}
+.back-container {
+  display: flex;
+  align-items: center; /* This will vertically center align the icon with the text */
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 200px;
+  cursor: pointer;
+  z-index: 150;
+}
+
+.back-icon {
+  color: white;
+  font-size: 24px;
+  /* Remove width and height as they are not needed for Material-UI icons */
+}
+
+.backtext {
+  font-size: medium;
+  width: 250px;
+  padding-left: 50px;
+  color: white;
+}
+
+/* Now, when you hover over the .back-container, both the icon and text will respond */
+.back-container:hover .backtext {
+  text-decoration: underline;
 }

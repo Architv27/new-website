@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #121212;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  padding: 2rem;
+  position: relative;
+  overflow-y: auto; /* Changed to 'auto' */
+  height: 100vh; /* Ensure the container fills the viewport */
+}
+  
+  .back-home {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    margin-right: -20px;
+  }
+  
+  .backtext {
+    margin-left: 8px;
+    font-size: medium;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+  
+  .backtext:hover {
+    text-decoration: underline;
+  }
+  
+  .about-title {
+    margin-left: 50px; /* Adjust as needed */
+    padding-top: 20px;
+  }
+  
+  .content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .profile-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-right: 50px; /* Adjust as needed */
+  }
+  
+  .profile-photo {
+    width: 30%; /* Increased size */
+    height: 80%;
+    margin-left: 40px;
+    margin-top: 20px;
+    aspect-ratio: 3 / 4; /* Vertical rectangle */
+    border-radius: 15px; /* Curved borders */
+    object-fit: cover; /* Ensures the image covers the area */
+  }
+  
+  .bio-section {
+    flex: 2;
+    text-align: left;
+    padding-left: 50px; /* Adjust as needed */
+    padding-bottom: 20px;
+  }
+  
+  .bio {
+    line-height: 1.6;
+  }
+  
