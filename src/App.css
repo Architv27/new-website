@@ -8,6 +8,7 @@
   flex-direction: column; /* Stacks items vertically */
   justify-content: flex-start; /* Aligns content to the top */
   overflow: hidden;
+  
 }
 
 .headerContainer {
@@ -162,6 +163,7 @@ h1 {
   margin: 0.5em 0;
 }
 
+
 .downloadCv {
   background-color: #e57393; /* Adjust as needed */
   color: white;
@@ -196,7 +198,8 @@ h1 {
 }
 
 .expertise {
-  color:#e57373
+  color:#e57373;
+  letter-spacing: 1px;
 }
 
 .navItem:hover {

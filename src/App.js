@@ -40,9 +40,9 @@ function App() {
                 </div>
               </div>
               <div className="additionalText">
-                <p className="expertise">Expert on</p>
+                <p className="expertise">Crafting Code with Precision</p>
                 <h3 className="location">Based in Canada</h3>
-                <p className="description">I'm a Full-stack Software Engineer. Hey are looking for a designer to build your brand and grow your business? Let's shake hands with me.</p>
+                <p className="description">As a dedicated Full-stack Software Engineer, I specialize in turning complex problems into elegant solutions. Are you seeking a developer to elevate your brand and propel your business forward? Let's collaborate and create something amazing.</p>
                 <a href={`${process.env.PUBLIC_URL}/ArchitVermaResume.pdf`} download="ArchitVermaResume.pdf">
                   <button className="downloadCv">Download Resume</button>
                 </a>
