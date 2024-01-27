@@ -56,6 +56,18 @@
   width: 100%; /* Set the width to 100% of the parent */
   padding-top: 0; /* Reset padding top if it's not needed */
   padding-left: 8%;
+  animation: slideFromLeft 1s ease-out;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .introText {
@@ -73,6 +85,16 @@
 .introText .subtitle {
   font-size: 2rem; /* Adjust the size as needed */
   margin-bottom: 0; /* Remove bottom margin if not needed */
+}
+@keyframes slideFromRight {
+  0% {
+    transform: translate(100%, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -50%);
+    opacity: 1;
+  }
 }
 
 
@@ -157,7 +179,9 @@ h1 {
   text-align: left;
   max-width: 300px; /* Adjust as needed */
   z-index: 1;
+  animation: slideFromRight 1s ease-out;
 }
+
 
 .expertise, .location, .description {
   margin: 0.5em 0;

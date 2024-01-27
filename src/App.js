@@ -10,11 +10,21 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { IconButton } from '@mui/material';
 import FunFactGenerator from './Random';
+import { CSSTransition } from 'react-transition-group';
+import { useEffect, useState } from 'react';
 
 // Component for contact, assuming it exists
 const Contact = () => <div>Random Content</div>;
 
 function App() {
+  // Inside your App function
+  const [showIntro, setShowIntro] = useState(false);
+  const [showAdditional, setShowAdditional] = useState(false);
+
+  useEffect(() => {
+    setShowIntro(true);
+    setShowAdditional(true);
+  }, []);
   return (
     <div className="App">
       <Router>
@@ -32,6 +42,7 @@ function App() {
             <Link to="/random" className="navItem">Random</Link>
           </nav>
         </header>
+            <CSSTransition in={showIntro} timeout={1000} classNames="slide-left" unmountOnExit>
               <div className="introContainer">
                 <img src={linkedin} alt="Archit" className="profileImage" /> {/* Add your image here */}
                 <div className="introText">
@@ -39,6 +50,8 @@ function App() {
                   <p className="subtitle">Software Developer</p>
                 </div>
               </div>
+            </CSSTransition>
+            <CSSTransition in={showAdditional} timeout={1000} classNames="slide-right" unmountOnExit>
               <div className="additionalText">
                 <p className="expertise">Crafting Code with Precision</p>
                 <h3 className="location">Based in Canada</h3>
@@ -47,6 +60,7 @@ function App() {
                   <button className="downloadCv">Download Resume</button>
                 </a>
               </div>
+            </CSSTransition>
               <div className="socialLinks">
                 <IconButton href="https://www.linkedin.com/in/archit-verma-b924a8209/" target="_blank" rel="noopener noreferrer">
                   <LinkedInIcon style={{ fontSize: '3rem', color:"white" }} />
