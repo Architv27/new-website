@@ -1,0 +1,21 @@
+html,
+body,
+#root,
+canvas {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.loading {
+  color: rgb(155, 155, 155);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  position: absolute;
+  text-align: center;
+  margin-top: 20px;
+  height: 50px;
+  width: 50px;
+}
