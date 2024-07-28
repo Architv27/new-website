@@ -12,6 +12,7 @@ import { IconButton } from '@mui/material';
 import FunFactGenerator from './Random';
 import { CSSTransition } from 'react-transition-group';
 import { useEffect, useState } from 'react';
+import GlobeAnimation from './components/GlobeAnimation';
 
 // Component for contact, assuming it exists
 const Contact = () => <div>Random Content</div>;
@@ -31,7 +32,8 @@ function App() {
         <Routes>
           <Route path="/" element={
             <div className="heroBackground">
-                      <header className="headerContainer">
+              <GlobeAnimation/>
+            <header className="headerContainer">
           <div className="nameAndEmail">
             <h1>Archit Verma</h1>
             <p className="email">archit.sfu@gmail.com</p>
@@ -44,7 +46,7 @@ function App() {
         </header>
             <CSSTransition in={showIntro} timeout={1000} classNames="slide-left" unmountOnExit>
               <div className="introContainer">
-                <img src={linkedin} alt="Archit" className="profileImage" /> {/* Add your image here */}
+                {/* <img src={linkedin} alt="Archit" className="profileImage" /> Add your image here */}
                 <div className="introText">
                   <h2>Hi, I'm <span className="highlight">Archit</span></h2>
                   <p className="subtitle">Software Developer</p>
